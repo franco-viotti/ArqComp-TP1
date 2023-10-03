@@ -45,9 +45,9 @@ module ALU
       NOR   :
         tmp_reg = ~(i_A ^ i_B);
       SRA   :
-        tmp_reg = i_A >> i_B;
-      SRL   :
         tmp_reg = i_A >>> i_B;
+      SRL   :
+        tmp_reg = i_A >> i_B;
       default:
         tmp_reg = {NB_AB{1'bz}}; // Default TODO: preguntar si no ponemos en alta impedancia Z
     endcase

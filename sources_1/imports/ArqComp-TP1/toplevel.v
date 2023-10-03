@@ -5,11 +5,11 @@ module toplevel
      parameter NB_AB     = 4     //! Numero de bits de operandos
    )
    (
-     input [NB_OP - 1 : 0]   i_sw,
-     input [NB_BTN -1 : 0]   i_btn,
-     input                   i_reset,
-     input                   clock,
-     output [NB_AB -1 : 0]   o_led
+     input [NB_OP - 1 : 0]      i_sw,
+     input [NB_BTN - 1 : 0]     i_btn,
+     input                      i_reset,
+     input                      clock,
+     output [NB_AB - 1 : 0]     o_led
    );
 
   reg [NB_AB - 1: 0]     a;
