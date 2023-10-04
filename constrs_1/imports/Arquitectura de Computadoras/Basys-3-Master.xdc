@@ -64,10 +64,14 @@ set_property -dict { PACKAGE_PIN U15   IOSTANDARD LVCMOS33 } [get_ports {o_led[5
 
 
 ##Buttons
-set_property -dict { PACKAGE_PIN U18   IOSTANDARD LVCMOS33 } [get_ports { i_btn[0] }]; #btnC]
-set_property -dict { PACKAGE_PIN T18   IOSTANDARD LVCMOS33 } [get_ports { i_btn[1] }]; #btnU]
-set_property -dict { PACKAGE_PIN W19   IOSTANDARD LVCMOS33 } [get_ports { i_btn[2] }]; #btnL]
-set_property -dict { PACKAGE_PIN T17   IOSTANDARD LVCMOS33 } [get_ports { i_reset }];
+# U18 -> OPERANDO B
+set_property -dict { PACKAGE_PIN U18   IOSTANDARD LVCMOS33 } [get_ports { i_btn[1] }]; #btnC]
+# T18 -> RESET
+set_property -dict { PACKAGE_PIN T18   IOSTANDARD LVCMOS33 } [get_ports { i_reset }]; #btnU]
+# W19 -> OPERANDO A
+set_property -dict { PACKAGE_PIN W19   IOSTANDARD LVCMOS33 } [get_ports { i_btn[0] }]; #btnL]
+# T17 -> OPERACION
+set_property -dict { PACKAGE_PIN T17   IOSTANDARD LVCMOS33 } [get_ports { i_btn[2] }];
 #set_property -dict { PACKAGE_PIN U17   IOSTANDARD LVCMOS33 } [get_ports btnD]
 
 
