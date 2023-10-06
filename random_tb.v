@@ -48,7 +48,7 @@ toplevel
         .o_led  (o_led),
         .i_reset (reset)
     );
-    
+
 
 task automatic load_random();
 begin
@@ -75,8 +75,8 @@ begin
     #10 @(posedge clock) reset  =   1'b1;
     #10 @(posedge clock) reset  =   1'b0;
     #10;
-//    $srandom(time);
-        repeat (20) begin
+
+    repeat (20) begin
         load_random();
         $display("Operandos A: %b, B: %b", A_tmp, B_tmp);
         // SUMA
@@ -157,7 +157,7 @@ begin
         #10;
         i_btn   =   3'b000;
         #10;
-       // SRL
+        // SRL
         i_sw    =   SRL;
         #10;
         i_btn   =   3'b100;
@@ -182,10 +182,10 @@ begin
         end
         #10;
     end
-    #10; 
-    $finish; 
+    #10;
+    $finish;
 end
 
 
 endmodule
- 
+

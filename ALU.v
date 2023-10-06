@@ -25,10 +25,8 @@ module ALU
    );
 
 
-  //assign o_result = 0;
-
   reg signed [NB_AB - 1 : 0]    tmp_reg;
-  
+
   always @(*)
   begin
     case (i_opcode)
@@ -49,10 +47,10 @@ module ALU
       SRL   :
         tmp_reg = i_A >> i_B;
       default:
-        tmp_reg = {NB_AB{1'bz}}; // Default TODO: preguntar si no ponemos en alta impedancia Z
+        tmp_reg = {NB_AB{1'bz}};
     endcase
   end
-  
+
   assign o_result = tmp_reg;
 
 endmodule

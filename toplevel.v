@@ -29,9 +29,9 @@ module toplevel
      if(i_reset)begin
         a           <=   {NB_AB{1'b0}};
         b           <=   {NB_AB{1'b0}};
-        operation   <=   {NB_OP{1'b0}}; 
+        operation   <=   {NB_OP{1'b0}};
     end
-  
+
     case(i_btn)
       3'b001  :
         a <= i_sw[NB_AB-1 : 0];
