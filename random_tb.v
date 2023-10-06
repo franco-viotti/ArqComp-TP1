@@ -157,7 +157,7 @@ begin
         #10;
         i_btn   =   3'b000;
         #10;
-        // SRL
+       // SRL
         i_sw    =   SRL;
         #10;
         i_btn   =   3'b100;
@@ -188,3 +188,4 @@ end
 
 
 endmodule
+ 
