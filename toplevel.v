@@ -5,11 +5,11 @@ module toplevel
      parameter NB_AB     = 4     //! Numero de bits de operandos
    )
    (
-     input [NB_OP - 1 : 0]      i_sw,
-     input [NB_BTN - 1 : 0]     i_btn,
-     input                      i_reset,
-     input                      clock,
-     output [NB_AB - 1 : 0]     o_led
+     input [NB_OP - 1 : 0]      i_sw,     //! Switches de entrada
+     input [NB_BTN - 1 : 0]     i_btn,    //! Botones selectores
+     input                      i_reset,  //! Boton de reset
+     input                      clock,    //! Entrada de clock
+     output [NB_AB - 1 : 0]     o_led     //! LEDs de salida
    );
 
   reg [NB_AB - 1: 0]     a;
@@ -19,10 +19,6 @@ module toplevel
   wire [NB_AB - 1: 0]     wire_a;
   wire [NB_AB - 1: 0]     wire_b;
   wire [NB_OP - 1: 0]     wire_operation;
-
-  assign wire_a             =   a;
-  assign wire_b             =   b;
-  assign wire_operation     =   operation;
 
   always @(posedge clock)
   begin
@@ -42,6 +38,9 @@ module toplevel
     endcase
   end
 
+  assign wire_a             =   a;
+  assign wire_b             =   b;
+  assign wire_operation     =   operation;
 
   ALU
     #(
