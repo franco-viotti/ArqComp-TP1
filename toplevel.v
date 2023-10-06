@@ -12,23 +12,23 @@ module toplevel
      output [NB_AB - 1 : 0]     o_led     //! LEDs de salida
    );
 
-  reg [NB_AB - 1: 0]     a;
-  reg [NB_AB - 1: 0]     b;
-  reg [NB_OP - 1: 0]     operation;
+  reg [NB_AB - 1: 0]     a;         //! Operando A
+  reg [NB_AB - 1: 0]     b;         //! Operando B
+  reg [NB_OP - 1: 0]     operation; //! Operador
 
   wire [NB_AB - 1: 0]     wire_a;
   wire [NB_AB - 1: 0]     wire_b;
   wire [NB_OP - 1: 0]     wire_operation;
 
-  always @(posedge clock)
+  always @(posedge clock) //Asignacion de registros
   begin
-     if(i_reset)begin
+     if(i_reset)begin //! Reset
         a           <=   {NB_AB{1'b0}};
         b           <=   {NB_AB{1'b0}};
         operation   <=   {NB_OP{1'b0}};
     end
 
-    case(i_btn)
+    case(i_btn)       //! Asignacion segun boton
       3'b001  :
         a <= i_sw[NB_AB-1 : 0];
       3'b010  :
@@ -42,7 +42,7 @@ module toplevel
   assign wire_b             =   b;
   assign wire_operation     =   operation;
 
-  ALU
+  ALU //! Instancia de ALU
     #(
       .NB_AB(NB_AB),
       .NB_OP(NB_OP),
